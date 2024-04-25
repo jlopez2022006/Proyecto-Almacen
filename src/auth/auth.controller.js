@@ -4,12 +4,14 @@ import { generarJWT } from "../helpers/generate-JWT.js";
 
 export const register = async (req, res) => {
   try {
-    const { username, password, email } = req.body;
+    const { name, lastName, username, password, email } = req.body;
 
     const salt = bcryptjs.genSaltSync();
     const encryptedPassword = bcryptjs.hashSync(password, salt);
 
     const user = await User.create({
+      name,
+      lastName,
       username,
       email: email.toLowerCase(),
       password: encryptedPassword,
@@ -18,6 +20,8 @@ export const register = async (req, res) => {
     return res.status(200).json({
       msg: "user has been added to database",
       userDetails: {
+        name: user.name,
+        lastName: user.lastName,
         user: user.username,
         email: user.email,
       },

@@ -1,6 +1,14 @@
 import mongoose, { Schema } from 'mongoose'
 
 const UserSchema = mongoose.Schema({
+    name:{
+        type: String,
+        unique: true
+    },
+    lastName:{
+        type: String,
+        unique: true
+    },
     email: {
         type: String,
         unique: true

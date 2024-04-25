@@ -3,28 +3,28 @@ import mongoose, { Schema } from 'mongoose'
 const TareaSchema = mongoose.Schema({
     nombreTarea: {
         type: String,
-        unique: true
+        require: true
     },
     descripcion:{
-        type: String,
-        unique: true
+        type: String
     },
     fechaDeInicio:{
-        type: String,
-        unique: String
+        type: Date,
+        require: true
     },
     fechaDeCierre:{
-        type: String
+        type: Date,
+        require: true
     },
     estado:{
         type: Boolean,
         default: true
     },
-    nombre:{
+    name:{
         type: String,
         unique: true
     },
-    apellido:{
+    lastName:{
         type: String,
         unique: true
     }
