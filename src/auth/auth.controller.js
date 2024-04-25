@@ -20,8 +20,7 @@ export const register = async (req, res) => {
     return res.status(200).json({
       msg: "user has been added to database",
       userDetails: {
-        name: user.name,
-        lastName: user.lastName,
+        name: user.name + " " + user.lastName,
         user: user.username,
         email: user.email,
       },

@@ -19,6 +19,8 @@ router.post('/register',
     [
         check('email', 'Este no es un correo válido').isEmail(),
         check('email').custom(existeEmail),
+        check('name', 'El name es obligatorio').not().isEmpty(),
+        check('lastName', 'El lastname es obligatorio').not().isEmpty(),
         check('username', 'El username es obligatorio').not().isEmpty(),
         check('password', 'El password es obligatorio').not().isEmpty(),
         check('password', 'El password debe de ser mayor a 6 caracteres').isLength({ min: 6, }),
