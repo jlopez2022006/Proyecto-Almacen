@@ -47,7 +47,7 @@ export const tareasPut = async ( req, res ) => {
             estado,
             name,
             lastName
-        }, { new: true } );
+        } );
 
         res.status( 200 ).json( tareaActualizada );
     } catch ( error ) {
