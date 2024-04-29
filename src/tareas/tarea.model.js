@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
 
-const TareaSchema = mongoose.Schema({
+const TareaSchema = mongoose.Schema( {
     nombreTarea: {
         type: String,
         require: true
@@ -11,10 +11,12 @@ const TareaSchema = mongoose.Schema({
     fechaDeInicio: {
         type: Date,
         require: true,
+
     },
     fechaDeCierre: {
         type: Date,
-        require: true
+        require: true,
+
     },
     estado: {
         type: String,
@@ -29,6 +31,6 @@ const TareaSchema = mongoose.Schema({
         type: String,
         require: true
     }
-})
+} )
 
-export default mongoose.model('Tarea', TareaSchema)
+export default mongoose.model( 'Tarea', TareaSchema )
