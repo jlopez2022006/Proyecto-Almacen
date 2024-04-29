@@ -1,0 +1,48 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Almacenadora",
+    "collectionId": "53d557f1-074f-4f36-a14b-2e5b8764358d",
+    "dateExported": "2024-04-29T14:33:52.380Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "f7d3291b-cfac-4d02-ae34-6d6119cc0ec2",
+            "name": "Tareas",
+            "containerId": "",
+            "created": "2024-04-29T14:18:34.334Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "9f7f441a-3f6a-423c-935f-29ff38593a6c",
+            "colId": "53d557f1-074f-4f36-a14b-2e5b8764358d",
+            "containerId": "f7d3291b-cfac-4d02-ae34-6d6119cc0ec2",
+            "name": "Add Tareas",
+            "url": "http://127.0.0.1:8080/almacenadora/v1/task/agregar",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-29T14:07:52.442Z",
+            "modified": "2024-04-29T14:29:37.165Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreTarea\":\"Barrer\",\n  \"description\":\"se barre toda la casa\",\n  \"fechaDeInicio\":\"2024-04-29\",\n  \"fechaDeCierre\":\"2024-05-10\",\n  \"estado\":\"\",\n  \"name\":\"Ivan\",\n  \"lastName\":\"Lopez\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "fe650e68-a5e9-48a4-bb12-30661a85bec1",
+            "colId": "53d557f1-074f-4f36-a14b-2e5b8764358d",
+            "containerId": "f7d3291b-cfac-4d02-ae34-6d6119cc0ec2",
+            "name": "Ver Tareas",
+            "url": "http://127.0.0.1:8080/almacenadora/v1/task/verTareas",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-29T14:18:45.336Z",
+            "modified": "2024-04-29T14:19:22.159Z",
+            "headers": []
+        }
+    ],
+    "ref": "tI67BgTGoqMLzSq9bY6Y1XHkxEjrHLd3pXmmCO8sTGZoAlnbms7TGpu8A7l1js_pLIi7pX66UHiszvh5eGZmRQ"
+}

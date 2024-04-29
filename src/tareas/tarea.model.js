@@ -5,28 +5,29 @@ const TareaSchema = mongoose.Schema({
         type: String,
         require: true
     },
-    descripcion:{
+    descripcion: {
         type: String
     },
-    fechaDeInicio:{
+    fechaDeInicio: {
+        type: Date,
+        require: true,
+    },
+    fechaDeCierre: {
         type: Date,
         require: true
     },
-    fechaDeCierre:{
-        type: Date,
+    estado: {
+        type: String,
+        default: 'SIN INICIAR',
+        enum: ['SIN INICIAR', 'EN PROCESO', 'COMPLETADO']
+    },
+    name: {
+        type: String,
         require: true
     },
-    estado:{
-        type: Boolean,
-        default: true
-    },
-    name:{
+    lastName: {
         type: String,
-        unique: true
-    },
-    lastName:{
-        type: String,
-        unique: true
+        require: true
     }
 })
 
