@@ -33,3 +33,25 @@ export const tareasPost = async ( req, res ) => {
         res.status( 500 ).json( { error: 'Error al agregar la tarea' } );
     }
 };
+
+export const tareasPut = async ( req, res ) => {
+    try {
+        const { id } = req.params;
+        const { nombreTarea, descripcion, fechaDeInicio, fechaDeCierre, estado, name, lastName } = req.body;
+
+        const tareaActualizada = await Tarea.findByIdAndUpdate( id, {
+            nombreTarea,
+            descripcion,
+            fechaDeInicio,
+            fechaDeCierre,
+            estado,
+            name,
+            lastName
+        }, { new: true } );
+
+        res.status( 200 ).json( tareaActualizada );
+    } catch ( error ) {
+        console.error( "Error al actualizar la tarea:", error );
+        res.status( 500 ).json( { error: 'Error al actualizar la tarea' } );
+    }
+}
