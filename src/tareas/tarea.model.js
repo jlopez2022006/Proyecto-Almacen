@@ -19,9 +19,8 @@ const TareaSchema = mongoose.Schema( {
 
     },
     estado: {
-        type: String,
-        default: 'INCOMPLETA',
-        enum: ['INCOMPLETA', 'COMPLETADO']
+        type: Boolean,
+        default: false
     },
     name: {
         type: String,
