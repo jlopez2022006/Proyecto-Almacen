@@ -64,3 +64,23 @@ export const tareasDelete = async (req, res) => {
 
     res.status(200).json({ msg: 'Se elimino la tarea asignada' })
 }
+
+export const putEstado = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { estado } = req.body;
+
+        const tareaActualizada = await Tarea.findByIdAndUpdate(id, {
+            estado
+        }, { new: true });
+
+        if (!tareaActualizada) {
+            return res.status(404).json({ error: 'Tarea no encontrada' });
+        }
+
+        res.status(200).json(tareaActualizada);
+    } catch (error) {
+        console.error("Error al actualizar el estado de la tarea:", error);
+        res.status(500).json({ error: 'Error al actualizar el estado de la tarea' });
+    }
+};

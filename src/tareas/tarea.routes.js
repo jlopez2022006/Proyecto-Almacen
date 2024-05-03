@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { tareasDelete, tareasGet, tareasPost, tareasPut } from "./tarea.controller.js";
+import { tareasDelete, tareasGet, tareasPost, tareasPut, putEstado } from "./tarea.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 
 const router = Router()
@@ -28,6 +28,8 @@ check( "estado", "El estado es obligatorio" ).not().isEmpty(),
 check( "name", "El nombre es obligatorio" ).not().isEmpty(),
 check( "lastName", "El apellido es obligatorio" ).not().isEmpty(),
     validarCampos], tareasPut );
+
+router.put('/estado/:id', validarCampos, putEstado);    
 
 router.delete('/delete/:id', validarCampos, tareasDelete)
 
