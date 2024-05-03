@@ -20,8 +20,8 @@ const TareaSchema = mongoose.Schema( {
     },
     estado: {
         type: String,
-        default: 'SIN INICIAR',
-        enum: ['SIN INICIAR', 'EN PROCESO', 'COMPLETADO']
+        default: 'INCOMPLETA',
+        enum: ['INCOMPLETA', 'COMPLETADO']
     },
     name: {
         type: String,
